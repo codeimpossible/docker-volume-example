@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-
 # run this file on your local machine to kick off the example
-. ./vars.sh
 
 set -e
 
