@@ -1,11 +1,9 @@
 #!/usr/bin/env sh
 
-cd "${0%/*}"
-scriptDir="$(pwd)"
-
 set -e
 
-. ./vars.sh
+scripts_vol="vol_scripts"
+sharedResourcesImage="alpine:3.8"
 
 # prove that scripts have been copied into the current docker context
 ls -lsa /app
