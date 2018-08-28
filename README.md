@@ -8,11 +8,9 @@ this is a test repo to show an issue I ran into with volume sharing in the docke
 $ ./start.sh
 ```
 
-Will tell docker to build and run `Prep.dockerfile`. This container creates 3 volumes to store the files within the repo:
+Will tell docker to build and run `Prep.dockerfile`. This container creates a volume to store some the files within the repo:
 
-- `vol_dockerfiles` which contains all the *.dockerfile files
 - `vol_scripts` which contains all the *.sh files
-- `vol_out` which will hold created files within the prep container (not used yet)
 
 ## The issue
 The prep container will build successfully, but the `docker run` command will fail with an error similar to ```cp: can't stat '/app/*.sh': No such file or directory```
