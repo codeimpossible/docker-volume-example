@@ -21,16 +21,3 @@ docker run \
     -v $scripts_vol:/out \
     -t $sharedResourcesImage \
     /bin/sh -c "cp -r /app/*.sh /out && ls -lsa /out"
-
-docker volume rm $dockerfiles_vol > /dev/null 2>&1 || true
-docker volume create $dockerfiles_vol
-docker run \
-    --name=task_loader \
-    --rm \
-    -v /app:/app \
-    -v $dockerfiles_vol:/out \
-    -t $sharedResourcesImage \
-    /bin/sh -c "cp -r /app/*.dockerfile /out && ls -lsa /out"
-
-docker volume rm $out_vol > /dev/null 2>&1 || true
-docker volume create $out_vol
